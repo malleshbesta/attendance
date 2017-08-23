@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   before_save :ensure_authentication_token
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :name, presence: true
-  validates :imei, presence: true, uniqueness: true
-  validates :mobile, presence:true, uniqueness: true
+  #validates :name, presence: true
+  #validates :imei, presence: true, uniqueness: true
+  #validates :mobile, presence:true, uniqueness: true
 
 
   def ensure_authentication_token

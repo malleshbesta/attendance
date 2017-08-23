@@ -14,10 +14,10 @@ class Api::Users::RegistrationsController < Devise::RegistrationsController
         render json: {
             status: "successs", status_code: 200, message: "User registered successfully.",
             user_id: @user.id, IMEI: @user.imei,
-            auth_token: @user.authentication_token
+            #auth_token: @user.authentication_token
         }
       else
-        render json:{ status: "failure", code: 201, message:@user.errors.to_json}
+        render json:{ status: "failure", code: 201, message: "User already Registered."}
       end
       #sign_in @user
       #json = ::UserSerializer.new(current_user).as_json
