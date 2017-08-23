@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'warehouses', :to => "warehouses#index"
+
   devise_for :users, path: 'api/users', path_names:{sign_in: 'login', sign_out: 'logout'}, controllers: { sessions: "api/users/sessions", registrations: "api/users/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
