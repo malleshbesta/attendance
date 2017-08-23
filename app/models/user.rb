@@ -15,6 +15,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.authenticate(username,password)
+    user = User.find_for_authentication(email: username)
+    if user.present?
+      user.valid_password?(password)? user : nil
+
+    else
+      nil
+
+    end
+  end
+
 
   private
 
