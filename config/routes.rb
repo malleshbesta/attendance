@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'warehouses', :to => "warehouses#index"
+  post 'warehouses/login', :to => "warehouses#create"
 
   devise_for :users, path: 'api/users', path_names:{sign_in: 'login', sign_out: 'logout'}, controllers: { sessions: "api/users/sessions", registrations: "api/users/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
